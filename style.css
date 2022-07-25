@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  outline: none;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+}
+
+.form__wrap {
+  width: 100%;
+  padding: 10px 20px;
+}
+.form__wrap .input__wrap {
+  border: 1px solid black;
+  height: 80px;
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+}
+.form__wrap .input__wrap input {
+  height: 50px;
+  width: 100%;
+}
+.form__wrap .input__wrap.--message {
+  height: 150px;
+  padding-bottom: 30px;
+}
+.form__wrap .input__wrap textarea {
+  width: 100%;
+  height: 100%;
+}
+.form__wrap .input__wrap.--phone {
+  display: flex;
+}
+.form__wrap .input__wrap.--phone .selected-item {
+  border: 1px solid black;
+  height: 50px;
+  width: 100px;
+}
+.form__wrap .input__wrap .custom-list {
+  display: none;
+}
+.form__wrap .input__wrap .placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+}
+.form__wrap .input__wrap .input__error-msg {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  display: none;
+}/*# sourceMappingURL=style.css.map */

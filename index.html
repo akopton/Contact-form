@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact form</title>
+</head>
+<body>
+    <div class="form__wrap">
+        <form action="">
+            <div class="input__wrap --name">
+                <input type="text" name="first-name" id="first-name" placeholder="First name" class="first-name" data-input="name" data-required="name" required>
+                <span class="placeholder">First name</span>
+                <span class="input__error-msg --required" data-error="name" data-need="name">Please fill this field.</span>
+                <span class="input__error-msg --incorrect" data-error="name" data-valid="name">Your name is invalid.</span>
+            </div>
+
+            <div class="input__wrap --phone">
+                <div id="code" class="selected-item">+48</div>
+                <ul class="custom-list">
+                    <li>+47</li>
+                    <li>+46</li>
+                    <li>+45</li>
+                    <li>+44</li>
+                </ul>
+                <input type="tel" name="phone-number" id="phone-number" placeholder="Phone number" class="phone-number" data-input="phone" data-required="phone" required>
+                <span class="placeholder">Phone number </span>
+                <span class="input__error-msg --required" data-error="name" data-need="name">Please fill this field.</span>
+                <span class="input__error-msg --incorrect" data-error="name" data-valid="name">Your phone number is invalid.</span>
+            </div>
+
+            <div class="input__wrap --email">
+                <input type="email" name="email" id="email" placeholder="Email" class="email" data-input="email" data-required="email" required>
+                <span class="placeholder">Email</span>
+                <span class="input__error-msg --required" data-error="name" data-need="name">Please fill this field.</span>
+                <span class="input__error-msg --incorrect" data-error="name" data-valid="name">Your email is invalid.</span>
+            </div>
+
+            <div class="input__wrap --message">
+                <textarea name="message" id="message" class="message" wrap="hard" data-input="message" required></textarea>
+            </div>
+        </form>
+
+        <div class="statements">
+            <div class="checkbox__wrap">
+                <input type="checkbox" id="accept-all" name="accept-all" class="accept-all" data-input="checkbox">
+                <span for="accept-all">Accept all the statements:</span>
+
+            </div>
+            <div class="checkbox__wrap">
+                <input type="checkbox" id="statute" name="statute" data-required="checkbox" data-input="checkbox" data-valid="checkbox" required>
+                <span for="statute" class="statute"><span class="required">*</span></span>
+
+            </div>
+            <div class="checkbox__wrap">
+                <input type="checkbox" id="personal-data" name="personal-data" data-required="checkbox" data-input="checkbox" data-valid="checkbox" required>
+                <span for="personal-data" class="personal-data"><span class="required">*</span></span>
+            </div>
+            <div class="checkbox__wrap">
+                <input type="checkbox" id="marketing" name="marketing" data-required="checkbox" data-input="checkbox" data-valid="checkbox" required>
+                <span></span>
+            </div>
+            <div class="checkbox__wrap">
+                <input type="checkbox" id="phone-calls" name="phone-calls" data-required="checkbox" data-input="checkbox" data-valid="checkbox" required>
+                <span></span>
+            </div>
+            <div class="checkbox__wrap">
+                <input type="checkbox" id="mails" name="mails" data-required="checkbox" data-input="checkbox" data-valid="checkbox" required>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
