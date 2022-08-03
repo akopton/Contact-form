@@ -21,18 +21,79 @@ textarea {
 
 .form__wrap {
     width: 100%;
-    padding: 10px 20px;
+    border: 1px solid red;
+    padding: 30px calc((100% - 328px)/2);
+
+    @media screen and (min-width: 600px) {
+        width: 600px;
+        padding: 30px calc((600px - 328px)/2);
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .input__wrap {
         border: 1px solid black;
+        width: 328px;
         height: 80px;
-        width: 100%;
         margin-bottom: 10px;
         position: relative;
 
         input {
             height: 50px;
             width: 100%;
+            padding-left: 10px;
+            font-size: 20px;
+
+            &::placeholder {
+                opacity: 0;
+            }
+
+            &:focus + .placeholder {
+                transform: translate(-8px, -27px) scale(0.75);
+                transition: all .3s ease;
+
+                &.--phone {
+                    transform: translate(-14px, -27px) scale(0.75);
+                }
+
+                &.--email {
+                    transform: translate(-5px, -27px) scale(0.75);
+                }
+            }
+
+            &:not(:placeholder-shown) + .placeholder {
+                opacity: 1;
+                transform: translate(-8px, -27px) scale(0.75);
+                transition: all .3s ease;
+                &.--phone {
+                    transform: translate(-14px, -27px) scale(0.75);
+                }
+
+                &.--email {
+                    transform: translate(-5px, -27px) scale(0.75);
+                }
+            }
+        }
+
+        .placeholder {
+            transition: all .3s ease;
+            pointer-events: none;
+            opacity: 1;
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            font-size: 20px;
+            background-color: white;
+            padding: 0 2px;
+
+            &.--phone {
+                left: 93px;
+            }
+            &.--message {
+                top: 11px;
+                line-height: 20px;
+                font-size: 15px;
+            }
         }
 
         &.--message {
@@ -42,6 +103,22 @@ textarea {
         textarea {
             width: 100%;
             height: 100%;
+            padding: 10px 10px;
+            font-size: 15px;
+            line-height: 20px;
+
+            &::placeholder {
+                opacity: 0;
+            }
+
+            &:focus + .placeholder {
+                opacity: 0;
+                transition: all .3s ease;
+            }
+
+            &:not(:placeholder-shown) + .placeholder {
+                opacity: 0;
+            }
         }
 
 
@@ -51,6 +128,21 @@ textarea {
                 border: 1px solid black;
                 height: 50px;
                 width: 100px;
+                display: flex;
+                align-items: center;
+                padding: 0 15px;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    height: 10px;
+                    width: 10px;
+                    position: absolute;
+                    top: 50%;
+                    right: 15px;
+                    transform: translateY(-50%);
+                    border: 1px solid red;
+                }
             }
         }
         
@@ -59,18 +151,28 @@ textarea {
             display: none;
         }
 
-        .placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-size: 20px;
-        }
+        
 
         .input__error-msg {
             position: absolute;
             bottom: 5px;
             left: 0;
             display: none;
+            color: red;
+
+            &.--incorrect { 
+                display: block;
+            }
+
+            &.--maxchar {
+                display: block;
+            }
         }
+
+
     }
+}
+
+.statements {
+
 }
